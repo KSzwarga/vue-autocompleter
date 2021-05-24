@@ -1,0 +1,73 @@
+<HTML>
+
+    <HEAD>
+        <meta charset="UTF-8">
+        <TITLE>vue-autocompleter</TITLE>
+        <link rel="stylesheet" type="text/css" href="autocompleter.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="cities.js"></script>
+        <script src="autocompleter.js"></script>
+        <STYLE>
+            body {
+                font-size: large;
+            }
+            #app {
+                display: flex;
+                margin-top: 50px;
+            }
+            #firstColumn {
+                float: left;
+                width: 30%;
+                margin-left: 10%;
+            }
+            #secondColumn {
+                float: left;
+                width: 70%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            #box {
+                margin-top: 20px;
+                border: 1px solid gray;
+                border-radius: 24px;
+            }
+        </STYLE>
+    </HEAD>
+    
+    <body>
+        <div id="app">
+            <div id="firstColumn">
+                <div><h2>Wpisz fraze</h2></div>
+                <div id="box">
+                    <v-autocompleter v-model="googleSearch" :options="cities"></v-autocompleter>
+                </div>
+            </div>
+            <div id="secondColumn">
+                <h2>Opis</h2>
+                <div>
+                    Autocompleter zwraca listę miast zawierających wpisaną frazę w jakimkolwiek miejscu.
+                    Maksymalna ilość sugerowanych miast to 10. Wielkość liter ma znaczenie.
+                </div>
+                <div>
+                    <br>
+                    Po sugestiach można się przemieszczać za pomocą strzałek lub myszki. Aby wyszukać frazę
+                    należy nacisnąć enter lub kliknąć sugestię myszką.
+                </div>
+                <div>
+                   
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                cities: window.cities,
+                googleSearch: '',
+            },
+        });
+    </script>
+    
+    </HTML>

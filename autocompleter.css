@@ -1,0 +1,45 @@
+.city{
+    display: inline-block;
+    font-weight: bold;
+}
+
+.city:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+.notBold {
+    font-weight: lighter;
+  }
+
+
+.nothing {
+  display: none;
+}
+.current {
+  background-color: lightgray;
+}
+.google-text-input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.87);
+  word-wrap: break-word;
+  outline: none;
+  height: 45px;
+  font-size: 16px;
+  padding-top: 2px;
+  padding-right: 40px;
+  padding-left: 10px;
+  width: 480px;
+}
+.list ul { padding-left:30px; list-style-image: url('lupa.png'); }
+.list li { margin-bottom:10px; }
+.list li:before {    
+    height: 1px;
+    width: 1px;
+    margin:0 5px 0 -15px;
+}
+.list .li::marker {
+    font-size: 1px; 
+}
